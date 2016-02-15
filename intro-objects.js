@@ -10,21 +10,21 @@ var customers = [
     { first: 'John', last: 'Smith'},
     { first: 'Dave', last: 'Jones'},
     { first: 'Jack', last: 'White'}
-]
+];
 
 var getFullNames = function(customers) {
 
-var newArray = []
+var newArray = [];
 for (var i = 0; i < customers.length; i++) {
-    var nameObject = customers[i] 
-    newArray.push(nameObject.first + " " + nameObject.last)    
+    var nameObject = customers[i] ;
+    newArray.push(nameObject.first + " " + nameObject.last);    
 }
-return newArray
-}
+return newArray;
+};
     
 
 
-console.assert(getFullNames(customers)[1] === "John Smith")
+console.assert(getFullNames(customers)[1] === "John Smith");
 
 
 // Part 2
@@ -42,26 +42,26 @@ Comic book creators, like all story-tellers, get great mileage out of myth and h
 
 
 var getCounts = function(passage) {
-    var wordFreqObject = {}
-    var arr = passage.toLowerCase()
-    arr = arr.split(" ")
+    var wordFreqObject = {};
+    var arr = passage.toLowerCase();
+    arr = arr.split(" ");
     for (var i = 0; i < arr.length; i++) {
-        var word = arr[i]
+        var word = arr[i];
     if (word in wordFreqObject) {
-    wordFreqObject[word] = wordFreqObject[word] + 1
+    wordFreqObject[word] = wordFreqObject[word] + 1;
     }
     else {
-    wordFreqObject[word] = 1    
+    wordFreqObject[word] = 1;   
     }
     }
-        return wordFreqObject
-    }
+        return wordFreqObject;
+    };
 
 
-var wordFrequencyObject = getCounts(text)
+var wordFrequencyObject = getCounts(text);
 
-console.assert(wordFrequencyObject.but === 3)
-console.assert(wordFrequencyObject.black === 5)
+console.assert(wordFrequencyObject.but === 3);
+console.assert(wordFrequencyObject.black === 5);
 
 
 
@@ -79,37 +79,37 @@ console.assert(wordFrequencyObject.black === 5)
 
 
 var generateDog = function(dogName) {
-    this.legs = 4
-    this.name = dogName
-    this.weight = 33
-    this.color = 'tartan'
+    this.legs = 4;
+    this.name = dogName;
+    this.weight = 33;
+    this.color = 'tartan';
     this.speak = function(Command) {
     
-    var doggyWoggy =[]  
-        var dogSpeak = Command.split(" ")
+    var doggyWoggy =[];  
+        var dogSpeak = Command.split(" ");
     for (var i = 0; i < dogSpeak.length; i++) {
-        var word = dogSpeak[i]
-        word = word.substring(0,0) +'r'+ word.substring(1)
-        doggyWoggy.push(word)   
+        var word = dogSpeak[i];
+        word = word.substring(0,0) +'r'+ word.substring(1);
+        doggyWoggy.push(word);   
     }    
-       dogSpeak = doggyWoggy.join(" ")
-       return dogSpeak
-    }
-}
+       dogSpeak = doggyWoggy.join(" ");
+       return dogSpeak;
+    };
+};
 // added "new" for the constructor to work
-var dog = new generateDog('rex')
+var dog = new generateDog('rex');
     
 
 
 
-console.assert(dog.legs === 4)
-console.assert(dog.speak('i love you') === 'r rove rou')
-console.assert(dog.name === 'rex')
+console.assert(dog.legs === 4);
+console.assert(dog.speak('i love you') === 'r rove rou');
+console.assert(dog.name === 'rex');
 
 // added "new" for the constructor to work
 
-var dog = new generateDog('carl')
-console.assert(dog.name === 'carl')
+var dog = new generateDog('carl');
+console.assert(dog.name === 'carl');
 
 
 
@@ -132,21 +132,21 @@ var stooges = [{
             },
             {
     name: 'curly', age: 60
-    }]
+    }];
 
 var pluck = function(objectsList, objectsValue) {
-var newArray = []
+var newArray = [];
 for (var i = 0; i < objectsList.length; i++) {
-    var uniqueObject = objectsList[i]
-    var uniqueValue = uniqueObject[objectsValue]
-    newArray.push(uniqueObject[objectsValue])
+    var uniqueObject = objectsList[i];
+    var uniqueValue = uniqueObject[objectsValue];
+    newArray.push(uniqueObject[objectsValue]);
 }
-return newArray
-}
+return newArray;
+};
 
 
-console.assert(pluck(stooges, 'name')[0] === 'moe')
-console.assert(pluck(stooges, 'age')[2] === 60)
+console.assert(pluck(stooges, 'name')[0] === 'moe');
+console.assert(pluck(stooges, 'age')[2] === 60);
 
 // XXXX DEAL OR NO DEAL XXXX
 
@@ -159,29 +159,29 @@ console.assert(pluck(stooges, 'age')[2] === 60)
 
 
 
-var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}]
+var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}];
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
 
 
 var reverseObjects = function(objectsList) {
-    var newArray = []
-    var newObject = {}
+    var newArray = [];
+    var newObject = {};
 for (var i = 0; i < objectsList.length; i++) {
-        var oldObject = objectsList[i]
+        var oldObject = objectsList[i];
   for (var prop in oldObject) {
-      newObject[oldObject[prop]] = prop
-        newArray.push(newObject)
+      newObject[oldObject[prop]] = prop;
+        newArray.push(newObject);
 }
 }
-return newArray
-}
+return newArray;
+};
 
 
-var flippedUsers = reverseObjects(users)
+var flippedUsers = reverseObjects(users);
 
-console.assert(flippedUsers[0]['president@gmail.com'] === 'obama')
-console.assert(flippedUsers[1]['americamoneywin@yahoo.com'] === 'trump')
-console.assert(flippedUsers[1].dealmaking === 'hobby')
+console.assert(flippedUsers[0]['president@gmail.com'] === 'obama');
+console.assert(flippedUsers[1]['americamoneywin@yahoo.com'] === 'trump');
+console.assert(flippedUsers[1].dealmaking === 'hobby');
 
 
 
@@ -193,26 +193,26 @@ console.assert(flippedUsers[1].dealmaking === 'hobby')
 
 var makeItTom = function(object) {
 	for (var prop in object) {
-		if (prop === 'name') object[prop] = 'Tom'
+		if (prop === 'name') object[prop] = 'Tom';
 	}
-	return object
-}
+	return object;
+};
 
 var sampleObject = {
 	mass: '5.972 × 10^24 kg',
 	age: '4.543 billion years',
 	name: 'Earth'
-}
+};
 
-var planetTom = makeItTom(sampleObject)
+var planetTom = makeItTom(sampleObject);
 
-console.assert(planetTom.name === 'Tom')
+console.assert(planetTom.name === 'Tom');
 
 // VVV caution: hints below VVV
 
-console.assert(planetTom['name'] === 'Tom')
-console.assert(planetTom.prop === undefined)
-console.assert(planetTom['prop'] === undefined)
+console.assert(planetTom['name'] === 'Tom');
+console.assert(planetTom.prop === undefined);
+console.assert(planetTom['prop'] === undefined);
 
 // What did you learn about the difference between
 // bracket syntax and dot syntax for object attributes?
@@ -269,19 +269,19 @@ console.assert(planetTom['prop'] === undefined)
 var politeObject = {
     name: "Frank",
     personalize: function(anyfunction) {
-    return "Hi, my name is " + politeObject.name + ", and the / result is " + anyfunction() + "."
+    return "Hi, my name is " + politeObject.name + ", and the / result is " + anyfunction() + ".";
 }
-}
+};
 
 var helloWorld = function() {
-    return "hello world"
-}
+    return "hello world";
+};
 
 
 
 
-var personalizedResult = politeObject.personalize(helloWorld)
+var personalizedResult = politeObject.personalize(helloWorld);
 
 // vvv deleted hard return after "the" vvv
 
-console.assert(personalizedResult === "Hi, my name is Frank, and the result is hello world.")
+console.assert(personalizedResult === "Hi, my name is Frank, and the result is hello world.");
