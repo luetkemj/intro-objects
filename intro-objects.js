@@ -31,7 +31,7 @@ var getFullNames = function(customers) {
 
 
 console.assert(getFullNames(customers)[1] === "John Smith");
-
+console.log(getFullNames(customers));
 
 // Part 2
 
@@ -66,6 +66,8 @@ var wordFrequencyObject = getCounts(text);
 
 console.assert(wordFrequencyObject.but === 3);
 console.assert(wordFrequencyObject.black === 5);
+
+console.log(wordFrequencyObject);
 
 
 
@@ -115,7 +117,7 @@ console.assert(dog.name === 'rex');
 var dog = new generateDog('carl');
 console.assert(dog.name === 'carl');
 
-
+console.log(dog.speak('i love you'));
 
 // Part 4 
 
@@ -152,6 +154,9 @@ var pluck = function(objectsList, objectsValue) {
 
 console.assert(pluck(stooges, 'name')[0] === 'moe');
 console.assert(pluck(stooges, 'age')[2] === 60);
+
+console.log(pluck(stooges, 'name'));
+console.log(pluck(stooges, 'age'));
 
 // XXXX DEAL OR NO DEAL XXXX
 
@@ -193,6 +198,8 @@ var reverseObjects = function(objectsList) {
 
 var flippedUsers = reverseObjects(users);
 
+console.log(flippedUsers);
+
 console.assert(flippedUsers[0]['president@gmail.com'] === 'obama');
 console.assert(flippedUsers[1]['americamoneywin@yahoo.com'] === 'trump');
 console.assert(flippedUsers[1].dealmaking === 'hobby');
@@ -219,6 +226,7 @@ var sampleObject = {
 };
 
 var planetTom = makeItTom(sampleObject);
+console.log(planetTom);
 
 console.assert(planetTom.name === 'Tom');
 
@@ -295,6 +303,7 @@ var helloWorld = function() {
 
 
 var personalizedResult = politeObject.personalize(helloWorld);
+console.log(personalizedResult);
 
 // vvv deleted hard return after "the" vvv
 
