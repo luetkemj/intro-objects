@@ -1,27 +1,33 @@
-
 // Part 1
 
 // Write a function called getFullNames that takes an array 
 // of objects with first and last names and returns an array 
 // of strings, where each string is a customer's full name.
 
-var customers = [
-    { first: 'Joe', last: 'Blogs'},
-    { first: 'John', last: 'Smith'},
-    { first: 'Dave', last: 'Jones'},
-    { first: 'Jack', last: 'White'}
-];
+var customers = [{
+    first: 'Joe',
+    last: 'Blogs'
+}, {
+    first: 'John',
+    last: 'Smith'
+}, {
+    first: 'Dave',
+    last: 'Jones'
+}, {
+    first: 'Jack',
+    last: 'White'
+}];
 
 var getFullNames = function(customers) {
 
-var newArray = [];
-for (var i = 0; i < customers.length; i++) {
-    var nameObject = customers[i] ;
-    newArray.push(nameObject.first + " " + nameObject.last);    
-}
-return newArray;
+    var newArray = [];
+    for (var i = 0; i < customers.length; i++) {
+        var nameObject = customers[i];
+        newArray.push(nameObject.first + " " + nameObject.last);
+    }
+    return newArray;
 };
-    
+
 
 
 console.assert(getFullNames(customers)[1] === "John Smith");
@@ -46,15 +52,14 @@ var getCounts = function(passage) {
     arr = arr.split(" ");
     for (var i = 0; i < arr.length; i++) {
         var word = arr[i];
-    if (word in wordFreqObject) {
-    wordFreqObject[word] = wordFreqObject[word] + 1;
+        if (word in wordFreqObject) {
+            wordFreqObject[word] = wordFreqObject[word] + 1;
+        } else {
+            wordFreqObject[word] = 1;
+        }
     }
-    else {
-    wordFreqObject[word] = 1;   
-    }
-    }
-        return wordFreqObject;
-    };
+    return wordFreqObject;
+};
 
 
 var wordFrequencyObject = getCounts(text);
@@ -83,21 +88,21 @@ var generateDog = function(dogName) {
     this.weight = 33;
     this.color = 'tartan';
     this.speak = function(Command) {
-    
-    var doggyWoggy =[];  
+
+        var doggyWoggy = [];
         var dogSpeak = Command.split(" ");
-    for (var i = 0; i < dogSpeak.length; i++) {
-        var word = dogSpeak[i];
-        word = word.substring(0,0) +'r'+ word.substring(1);
-        doggyWoggy.push(word);   
-    }    
-       dogSpeak = doggyWoggy.join(" ");
-       return dogSpeak;
+        for (var i = 0; i < dogSpeak.length; i++) {
+            var word = dogSpeak[i];
+            word = word.substring(0, 0) + 'r' + word.substring(1);
+            doggyWoggy.push(word);
+        }
+        dogSpeak = doggyWoggy.join(" ");
+        return dogSpeak;
     };
 };
 // added "new" for the constructor to work
 var dog = new generateDog('rex');
-    
+
 
 
 
@@ -124,23 +129,24 @@ console.assert(dog.name === 'carl');
 // tests
 // ---
 var stooges = [{
-    name: 'moe', age: 40
-            }, 
-            {
-    name: 'larry', age: 50
-            },
-            {
-    name: 'curly', age: 60
-    }];
+    name: 'moe',
+    age: 40
+}, {
+    name: 'larry',
+    age: 50
+}, {
+    name: 'curly',
+    age: 60
+}];
 
 var pluck = function(objectsList, objectsValue) {
-var newArray = [];
-for (var i = 0; i < objectsList.length; i++) {
-    var uniqueObject = objectsList[i];
-    var uniqueValue = uniqueObject[objectsValue];
-    newArray.push(uniqueObject[objectsValue]);
-}
-return newArray;
+    var newArray = [];
+    for (var i = 0; i < objectsList.length; i++) {
+        var uniqueObject = objectsList[i];
+        var uniqueValue = uniqueObject[objectsValue];
+        newArray.push(uniqueObject[objectsValue]);
+    }
+    return newArray;
 };
 
 
@@ -158,21 +164,30 @@ console.assert(pluck(stooges, 'age')[2] === 60);
 
 
 
-var users = [{obama: 'president@gmail.com',hobby: 'basketball'},{trump: 'americamoneywin@yahoo.com', hobby:'dealmaking'},{bush: 'jeb!@hotmail.com',hobby:'portraiture'}];
+var users = [{
+    obama: 'president@gmail.com',
+    hobby: 'basketball'
+}, {
+    trump: 'americamoneywin@yahoo.com',
+    hobby: 'dealmaking'
+}, {
+    bush: 'jeb!@hotmail.com',
+    hobby: 'portraiture'
+}];
 // should yield: [{'president@gmail.com': 'obama',basketball: 'hobby'}, ....]
 
 
 var reverseObjects = function(objectsList) {
     var newArray = [];
     var newObject = {};
-for (var i = 0; i < objectsList.length; i++) {
+    for (var i = 0; i < objectsList.length; i++) {
         var oldObject = objectsList[i];
-  for (var prop in oldObject) {
-      newObject[oldObject[prop]] = prop;
-        newArray.push(newObject);
-}
-}
-return newArray;
+        for (var prop in oldObject) {
+            newObject[oldObject[prop]] = prop;
+            newArray.push(newObject);
+        }
+    }
+    return newArray;
 };
 
 
@@ -191,16 +206,16 @@ console.assert(flippedUsers[1].dealmaking === 'hobby');
 // The code below doesn't work. Can you fix it?
 
 var makeItTom = function(object) {
-	for (var prop in object) {
-		if (prop === 'name') object[prop] = 'Tom';
-	}
-	return object;
+    for (var prop in object) {
+        if (prop === 'name') object[prop] = 'Tom';
+    }
+    return object;
 };
 
 var sampleObject = {
-	mass: '5.972 × 10^24 kg',
-	age: '4.543 billion years',
-	name: 'Earth'
+    mass: '5.972 × 10^24 kg',
+    age: '4.543 billion years',
+    name: 'Earth'
 };
 
 var planetTom = makeItTom(sampleObject);
@@ -268,8 +283,8 @@ console.assert(planetTom['prop'] === undefined);
 var politeObject = {
     name: "Frank",
     personalize: function(anyfunction) {
-    return "Hi, my name is " + politeObject.name + ", and the / result is " + anyfunction() + ".";
-}
+        return "Hi, my name is " + politeObject.name + ", and the / result is " + anyfunction() + ".";
+    }
 };
 
 var helloWorld = function() {
